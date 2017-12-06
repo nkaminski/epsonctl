@@ -9,9 +9,10 @@ void usage(){
 }
 
 int main(int argc, char** argv){
+        int rv=0;
+
 	if(argc == 3){
 		int fd;
-    int rv=0;
 		struct termios spconfig;
 		const char* device = argv[1];
 		const char mute[] = "MUTE ON";
@@ -102,8 +103,8 @@ int main(int argc, char** argv){
 			close(fd);
 	}
 	else{
-    rv=1;
-    usage()
+    		rv=1;
+    		usage();
 	}
 	return rv;
 }
